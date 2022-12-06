@@ -1,0 +1,27 @@
+DROP database IF EXISTS BDRegitro;
+CREATE DATABASE BDRegistro;
+USE BDRegistro;
+
+CREATE TABLE Usuario
+(
+	idusu		int AUTO_INCREMENT PRIMARY KEY NOT NULL ,
+	nomusu		varchar(80) not NULL,		-- nombre
+	apeusu		varchar(80) not null,	-- Apellido
+	celusu		char(9) not null,		-- celular
+	fecnacusu		Date  not null		-- Nacimiento
+);
+
+INSERT INTO Usuario 
+	(nomusu, apeusu, celusu, fecnacusu)
+ VALUES
+('GERHARD JHON','DELGADO HUIVIN','946568659','1990/09/05'),
+('NORMA KIMIE','HATA DE FARFAN','915419737','1947/12/22'),
+('ISABEL','CARHUAS BENDEZU','941298816','2015/06/18'),
+('JUAN CARLOS','REYES SANCHEZ','942504651','1982/03/08'),
+('AMELIA','GUERRERO HUARI','907080714','1966/08/01'),
+('JHON','HUAMÁN FARFAN','946568657','1990/09/05'),
+('HAROLD','CHUMPITAZ DE CASAS','915409737','1947/12/22'),
+('JUANA ISABEL','CARHUAS BENDEZU','941297816','2010/06/25'),
+('CARLOS MANUEL','REYES CRUZ','949504651','1982/09/08'),
+('DAGNE JULIA','GUERRERO HUAMÁN','907080614','1966/08/10');
+
