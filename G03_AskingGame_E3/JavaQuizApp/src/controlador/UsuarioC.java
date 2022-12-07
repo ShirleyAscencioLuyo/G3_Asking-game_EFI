@@ -1,12 +1,10 @@
 package controlador;
 
-
 import Vista.UsuarioV;
 import dao.UsuarioImpl;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import modelo.Usuario;
-
 
 public class UsuarioC {
 
@@ -31,28 +29,29 @@ public class UsuarioC {
 
     public void modificar() {
         try {
+            usuario.setIdusu(UsuarioV.idUsuario);
             obtenerDatos();
-            dao.registrar(usuario);
+            dao.modificar(usuario);
         } catch (Exception e) {
-            System.out.println("Error en UsuarioC/registrar : " + e.getMessage());
+            System.out.println("Error en UsuarioC/modificar : " + e.getMessage());
         }
     }
 
     public void eliminar() {
         try {
+            usuario.setIdusu(UsuarioV.idUsuario);
             obtenerDatos();
-            dao.registrar(usuario);
+            dao.eliminar(usuario.getIdusu());
         } catch (Exception e) {
-            System.out.println("Error en UsuarioC/registrar : " + e.getMessage());
+            System.out.println("Error en UsuarioC/eliminar  : " + e.getMessage());
         }
     }
 
     public void listar(DefaultTableModel modelo, Integer tipo, String dato) {
         try {
-            obtenerDatos();
-            dao.registrar(usuario);
+            dao.listar(modelo, tipo, dato);
         } catch (Exception e) {
-            System.out.println("Error en UsuarioC/registrar : " + e.getMessage());
+            System.out.println("Error en Listar Usuarios : " + e.getMessage());
         }
     }
 
